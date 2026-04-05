@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
     // Validate MIME type
     if (!ALLOWED_MIME_TYPES.has(file.type)) {
       return NextResponse.json(
-        { error: 'Invalid file type. The morgue accepts JPEG, PNG, WebP, PDF, or DOCX.' },
+        { error: 'Invalid file type. Please upload a JPEG, PNG, WebP, PDF, or DOCX.' },
         { status: 400 }
       );
     }
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     // Validate file size
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
-        { error: "This file is too large. We're a morgue, not a warehouse. Max 5MB." },
+        { error: "File exceeds the 5MB limit. Please upload a smaller document." },
         { status: 400 }
       );
     }

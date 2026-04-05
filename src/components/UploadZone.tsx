@@ -36,7 +36,7 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
       return 'Invalid file type. Please upload a JPEG, PNG, or WebP image.';
     }
     if (file.size > MAX_BYTES) {
-      return "This file is too large. We're a morgue, not a warehouse. Max 5MB.";
+      return "File exceeds the 5MB limit. Please upload a smaller document.";
     }
     return null;
   }
@@ -175,7 +175,7 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
           onClick={handleSubmit}
           className="w-full py-3 rounded-xl text-sm font-semibold tracking-wide bg-[#E24B4A] text-white hover:bg-[#c73b3a] active:scale-[0.98] transition-all"
         >
-          Fire me
+          Get my termination date
         </button>
 
         <input
