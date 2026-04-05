@@ -3,18 +3,18 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "fireable.ai — Find out if AI is about to fire you",
+  title: "fireable.ai — Find out when AI is coming for your job",
   description:
     "Upload your LinkedIn or CV. Get your termination probability score.",
   openGraph: {
-    title: "fireable.ai — Find out if AI is about to fire you",
+    title: "fireable.ai — Find out when AI is coming for your job",
     description:
       "Upload your LinkedIn or CV. Get your termination probability score.",
     siteName: "fireable.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "fireable.ai — Find out if AI is about to fire you",
+    title: "fireable.ai — Find out when AI is coming for your job",
     description:
       "Upload your LinkedIn or CV. Get your termination probability score.",
   },

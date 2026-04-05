@@ -24,7 +24,7 @@ export default function LandingPage() {
           <BriefcaseIcon className="w-11 h-11 text-[#E24B4A]" />
 
           <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gray-400">
-            AI Human Resources Department
+            Department of Human Obsolescence
           </p>
 
           <h1 className="text-5xl font-black tracking-tight leading-none">
@@ -33,7 +33,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-sm text-gray-500 max-w-[340px] leading-relaxed mt-1">
-            Find out if AI is about to fire you.
+            Find out when AI is coming for your job.
           </p>
         </div>
 

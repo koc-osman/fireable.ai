@@ -225,7 +225,7 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
         disabled
         className="w-full py-3 rounded-xl text-sm font-semibold tracking-wide bg-gray-100 text-gray-400 cursor-not-allowed"
       >
-        Check my risk
+        Get my termination date
       </button>
 
       <input

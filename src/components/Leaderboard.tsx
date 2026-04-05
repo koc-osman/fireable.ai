@@ -37,19 +37,19 @@ export default function Leaderboard() {
       <div className="flex items-stretch border-b border-gray-200">
         <div className="flex-1 px-5 py-3 flex items-center">
           <h2 className="text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-400">
-            Career Mortality Index
+            Human Obsolescence Index
           </h2>
         </div>
         <div className="flex">
           <TabButton
             active={tab === 'most_dead'}
             onClick={() => setTab('most_dead')}
-            label="Most Dead"
+            label="Already Replaced"
           />
           <TabButton
             active={tab === 'survivors'}
             onClick={() => setTab('survivors')}
-            label="Survivors"
+            label="On Borrowed Time"
           />
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function Leaderboard() {
 
               {/* Autopsy count */}
               <span className="text-xs text-gray-300 tabular-nums shrink-0 w-14 text-right">
-                {entry.total_autopsies.toLocaleString()} autopsies
+                {entry.total_autopsies.toLocaleString()} scanned
               </span>
             </li>
           ))}
@@ -138,8 +138,8 @@ function LoadingSkeleton() {
 function EmptyState() {
   return (
     <div className="px-5 py-8 text-center">
-      <p className="text-xs text-gray-400">No autopsies performed yet.</p>
-      <p className="text-xs text-gray-300 mt-1">Be the first victim.</p>
+      <p className="text-xs text-gray-400">No terminations processed yet.</p>
+      <p className="text-xs text-gray-300 mt-1">Be the first case.</p>
     </div>
   );
 }

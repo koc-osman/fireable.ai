@@ -255,7 +255,7 @@ export async function GET(request: NextRequest) {
             fireable.ai — AI termination probability
           </span>
           <span style={{ fontSize: 14, color: '#d1d5db' }}>
-            Find out if AI is about to fire you →
+            Find out when AI is coming for your job →
           </span>
         </div>
       </div>
@@ -293,7 +293,7 @@ function fallbackImage() {
         </div>
         <div style={{ fontSize: 24, color: GRAY, textAlign: 'center', maxWidth: 600 }}>
           Upload your LinkedIn.
-          Find out if AI is about to fire you.
+          Find out when AI is coming for your job.
         </div>
       </div>
     ),
