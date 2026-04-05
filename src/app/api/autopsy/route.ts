@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     const { allowed, remaining } = await checkRateLimit(ip);
     if (!allowed) {
       return NextResponse.json(
-        { error: "You've used all your autopsies for today. Come back tomorrow." },
+        { error: "Your daily termination quota has been reached. Come back tomorrow." },
         {
           status: 429,
           headers: { 'X-RateLimit-Remaining': '0' },

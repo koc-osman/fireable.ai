@@ -22,7 +22,7 @@ export async function proxy(request: NextRequest) {
 
     if (count !== null && count >= RATE_LIMIT) {
       return NextResponse.json(
-        { error: "You've used all your autopsies for today. Come back tomorrow." },
+        { error: "Your daily termination quota has been reached. Come back tomorrow." },
         { status: 429 }
       );
     }
