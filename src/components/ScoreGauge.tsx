@@ -19,13 +19,13 @@ export default function ScoreGauge({ score, severity, severityLabel }: ScoreGaug
       <svg
         viewBox="0 0 200 100"
         className="w-full max-w-[280px]"
-        aria-label={`AI exposure score: ${score} out of 100`}
+        aria-label={`Termination probability: ${score}%`}
       >
         {/* Background track */}
         <path
           d={ARC_PATH}
           fill="none"
-          stroke="#e5e7eb"
+          stroke="#2a2a2a"
           strokeWidth="14"
           strokeLinecap="round"
         />
@@ -33,7 +33,7 @@ export default function ScoreGauge({ score, severity, severityLabel }: ScoreGaug
         <path
           d={ARC_PATH}
           fill="none"
-          stroke="#E24B4A"
+          stroke="#f5c518"
           strokeWidth="14"
           strokeLinecap="round"
           strokeDasharray={CIRCUMFERENCE}
@@ -42,10 +42,10 @@ export default function ScoreGauge({ score, severity, severityLabel }: ScoreGaug
       </svg>
 
       {/* Score number */}
-      <div className="text-5xl font-bold text-[#E24B4A] -mt-2 leading-none">
+      <div className="text-5xl font-bold text-[#f5c518] -mt-2 leading-none">
         {score}
       </div>
-      <div className="text-xs text-gray-400 mt-0.5">/100</div>
+      <div className="text-xs text-[#555555] mt-0.5">/ 100</div>
 
       {/* Severity badge */}
       <div className="mt-2 text-sm font-bold tracking-widest text-[#E24B4A] uppercase">
@@ -53,7 +53,7 @@ export default function ScoreGauge({ score, severity, severityLabel }: ScoreGaug
       </div>
 
       {/* Severity one-liner */}
-      <div className="mt-1 text-xs text-gray-500 italic text-center px-4 max-w-[240px]">
+      <div className="mt-1 text-xs text-[#888888] italic text-center px-4 max-w-[240px]">
         {severityLabel}
       </div>
     </div>

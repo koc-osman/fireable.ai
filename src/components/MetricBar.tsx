@@ -6,8 +6,8 @@ interface MetricBarProps {
 
 const COLOR_MAP: Record<ForensicFinding['color'], string> = {
   red: '#E24B4A',
-  amber: '#ef9f27',
-  green: '#1D9E75',
+  amber: '#f5c518',
+  green: '#22c55e',
 };
 
 export default function MetricBar({ finding }: MetricBarProps) {
@@ -16,13 +16,13 @@ export default function MetricBar({ finding }: MetricBarProps) {
   return (
     <div className="flex items-center gap-3">
       {/* Label */}
-      <div className="w-[45%] text-xs text-gray-600 leading-tight shrink-0">
+      <div className="w-[45%] text-xs text-[#888888] leading-tight shrink-0">
         {finding.metric_name}
       </div>
 
       {/* Bar + score */}
       <div className="flex-1 flex items-center gap-2">
-        <div className="flex-1 h-2.5 bg-gray-200 rounded-full overflow-hidden">
+        <div className="flex-1 h-2.5 bg-[#2a2a2a] rounded-full overflow-hidden">
           <div
             className="h-full rounded-full transition-all duration-500"
             style={{ width: `${finding.score}%`, backgroundColor: barColor }}

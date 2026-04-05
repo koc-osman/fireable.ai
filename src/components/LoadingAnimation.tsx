@@ -30,16 +30,15 @@ export default function LoadingAnimation() {
     };
   }, []);
 
-  // Progress: based on messages revealed
   const progress = (visibleCount / MESSAGES.length) * 100;
 
   return (
     <div className="py-6 px-2 flex flex-col items-center gap-5">
       {/* Pulsing icon */}
       <div className="relative flex items-center justify-center">
-        <div className="w-12 h-12 rounded-full bg-[#E24B4A]/10 animate-ping absolute" />
-        <div className="w-8 h-8 rounded-full bg-[#E24B4A]/20 flex items-center justify-center relative z-10">
-          <SkullIcon className="w-4 h-4 text-[#E24B4A]" />
+        <div className="w-12 h-12 rounded-full bg-[#f5c518]/10 animate-ping absolute" />
+        <div className="w-8 h-8 rounded-full bg-[#f5c518]/20 flex items-center justify-center relative z-10">
+          <WarningIcon className="w-4 h-4 text-[#f5c518]" />
         </div>
       </div>
 
@@ -48,17 +47,17 @@ export default function LoadingAnimation() {
         {MESSAGES.slice(0, visibleCount).map((msg, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 text-sm text-gray-600 animate-fade-in"
+            className="flex items-center gap-2 text-sm animate-fade-in"
           >
-            <span className="text-[#E24B4A] text-xs">›</span>
-            <span className={i === visibleCount - 1 ? 'font-medium text-gray-800' : 'text-gray-400'}>
+            <span className="text-[#f5c518] text-xs">›</span>
+            <span className={i === visibleCount - 1 ? 'font-medium text-white' : 'text-[#444444]'}>
               {msg}
             </span>
             {i === visibleCount - 1 && (
               <span className="inline-flex gap-0.5 ml-1">
-                <span className="w-1 h-1 rounded-full bg-gray-400 animate-bounce [animation-delay:0ms]" />
-                <span className="w-1 h-1 rounded-full bg-gray-400 animate-bounce [animation-delay:150ms]" />
-                <span className="w-1 h-1 rounded-full bg-gray-400 animate-bounce [animation-delay:300ms]" />
+                <span className="w-1 h-1 rounded-full bg-[#555555] animate-bounce [animation-delay:0ms]" />
+                <span className="w-1 h-1 rounded-full bg-[#555555] animate-bounce [animation-delay:150ms]" />
+                <span className="w-1 h-1 rounded-full bg-[#555555] animate-bounce [animation-delay:300ms]" />
               </span>
             )}
           </div>
@@ -66,9 +65,9 @@ export default function LoadingAnimation() {
       </div>
 
       {/* Progress bar */}
-      <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+      <div className="w-full h-1 bg-[#2a2a2a] rounded-full overflow-hidden">
         <div
-          className="h-full bg-[#E24B4A] rounded-full transition-all duration-700 ease-out"
+          className="h-full bg-[#f5c518] rounded-full transition-all duration-700 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -76,10 +75,10 @@ export default function LoadingAnimation() {
   );
 }
 
-function SkullIcon({ className }: { className?: string }) {
+function WarningIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M12 2a9 9 0 0 1 9 9c0 3.18-1.65 5.97-4.13 7.6V21a1 1 0 0 1-1 1H8.13a1 1 0 0 1-1-1v-2.4A9 9 0 0 1 12 2zm-2 14v3h4v-3h-4zm-1-4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm6 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+      <path d="M12 2L1 21h22L12 2zm0 3.5L21 20H3L12 5.5zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z" />
     </svg>
   );
 }

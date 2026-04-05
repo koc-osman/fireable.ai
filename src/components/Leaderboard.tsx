@@ -9,8 +9,8 @@ interface LeaderboardData {
 
 function scoreColor(score: number): string {
   if (score >= 70) return '#E24B4A';
-  if (score >= 40) return '#ef9f27';
-  return '#1D9E75';
+  if (score >= 40) return '#f5c518';
+  return '#22c55e';
 }
 
 export default function Leaderboard() {
@@ -28,9 +28,9 @@ export default function Leaderboard() {
   const entries = data?.entries ?? [];
 
   return (
-    <div className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-      <div className="px-5 py-3 border-b border-gray-200">
-        <h2 className="text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-400">
+    <div className="border border-[#2a2a2a] rounded-2xl overflow-hidden bg-[#111111]">
+      <div className="px-5 py-3 border-b border-[#2a2a2a]">
+        <h2 className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#555555]">
           Most Fireable Jobs
         </h2>
       </div>
@@ -44,12 +44,12 @@ export default function Leaderboard() {
           {entries.map((entry, i) => (
             <li
               key={entry.job_title}
-              className="flex items-center gap-3 px-5 py-3 border-b border-gray-50 last:border-b-0 hover:bg-gray-50/50 transition-colors"
+              className="flex items-center gap-3 px-5 py-3 border-b border-[#1f1f1f] last:border-b-0 hover:bg-[#161616] transition-colors"
             >
-              <span className="w-5 text-xs font-mono text-gray-300 shrink-0 text-right">
+              <span className="w-5 text-xs font-mono text-[#444444] shrink-0 text-right">
                 {i + 1}
               </span>
-              <span className="flex-1 text-sm text-gray-700 truncate min-w-0">
+              <span className="flex-1 text-sm text-[#cccccc] truncate min-w-0">
                 {entry.job_title}
               </span>
               <span
@@ -58,7 +58,7 @@ export default function Leaderboard() {
               >
                 {entry.average_score}%
               </span>
-              <span className="text-xs text-gray-300 tabular-nums shrink-0 w-14 text-right">
+              <span className="text-xs text-[#444444] tabular-nums shrink-0 w-14 text-right">
                 {entry.total_autopsies.toLocaleString()} scanned
               </span>
             </li>
@@ -73,11 +73,11 @@ function LoadingSkeleton() {
   return (
     <div className="px-5 py-2">
       {Array.from({ length: 5 }).map((_, i) => (
-        <div key={i} className="flex items-center gap-3 py-3 border-b border-gray-50 last:border-b-0">
-          <div className="w-5 h-3 bg-gray-100 rounded animate-pulse" />
-          <div className="flex-1 h-3 bg-gray-100 rounded animate-pulse" />
-          <div className="w-8 h-3 bg-gray-100 rounded animate-pulse" />
-          <div className="w-14 h-3 bg-gray-100 rounded animate-pulse" />
+        <div key={i} className="flex items-center gap-3 py-3 border-b border-[#1f1f1f] last:border-b-0">
+          <div className="w-5 h-3 bg-[#1a1a1a] rounded animate-pulse" />
+          <div className="flex-1 h-3 bg-[#1a1a1a] rounded animate-pulse" />
+          <div className="w-8 h-3 bg-[#1a1a1a] rounded animate-pulse" />
+          <div className="w-14 h-3 bg-[#1a1a1a] rounded animate-pulse" />
         </div>
       ))}
     </div>
@@ -87,8 +87,8 @@ function LoadingSkeleton() {
 function EmptyState() {
   return (
     <div className="px-5 py-8 text-center">
-      <p className="text-xs text-gray-400">No terminations processed yet.</p>
-      <p className="text-xs text-gray-300 mt-1">Be the first case.</p>
+      <p className="text-xs text-[#555555]">No terminations processed yet.</p>
+      <p className="text-xs text-[#333333] mt-1">Be the first case.</p>
     </div>
   );
 }

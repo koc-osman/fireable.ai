@@ -16,30 +16,30 @@ export default function LandingPage() {
   );
 
   return (
-    <main className="min-h-screen bg-white py-12 px-4">
+    <main className="min-h-screen bg-[#0a0a0a] py-12 px-4">
       <div className="max-w-[520px] mx-auto flex flex-col gap-8">
 
         {/* ── 1. Header ──────────────────────────────────── */}
         <div className="flex flex-col items-center text-center gap-3">
           <BriefcaseIcon className="w-11 h-11 text-[#E24B4A]" />
 
-          <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gray-400">
+          <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#555555]">
             Department of Human Obsolescence
           </p>
 
           <h1 className="text-5xl font-black tracking-tight leading-none">
-            <span className="text-gray-900">fireable</span>
+            <span className="text-white">fireable</span>
             <span className="text-[#E24B4A]">.ai</span>
           </h1>
 
-          <p className="text-sm text-gray-500 max-w-[340px] leading-relaxed mt-1">
+          <p className="text-sm text-[#888888] max-w-[340px] leading-relaxed mt-1">
             Find out when AI is coming for your job.
           </p>
         </div>
 
         {/* ── 2. Upload card ──────────────────────────────── */}
-        <div className="border border-gray-200 rounded-2xl p-5 shadow-sm">
-          <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-400 mb-4">
+        <div className="border border-[#2a2a2a] rounded-2xl p-5 bg-[#111111]">
+          <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#555555] mb-4">
             Submit your employment file
           </p>
           <UploadZone onSuccess={handleSuccess} />
@@ -62,8 +62,6 @@ function DeathCounter() {
   useEffect(() => {
     fetch('/api/leaderboard')
       .then((r) => r.json())
-      // daily count lives on a separate endpoint but we reuse the leaderboard
-      // fetch timing; the actual per-day count is fetched here independently
       .catch(() => null);
 
     fetch('/api/daily-count')
@@ -73,14 +71,14 @@ function DeathCounter() {
   }, []);
 
   return (
-    <p className="text-center text-xs text-gray-400 pb-4">
+    <p className="text-center text-xs text-[#555555] pb-4">
       {count !== null ? (
         <>
-          <span className="font-semibold text-gray-600">{count.toLocaleString()}</span>{' '}
+          <span className="font-semibold text-[#888888]">{count.toLocaleString()}</span>{' '}
           {count === 1 ? 'employee' : 'employees'} terminated by AI today
         </>
       ) : (
-        <span className="text-gray-300">— employees terminated by AI today</span>
+        <span className="text-[#333333]">— employees terminated by AI today</span>
       )}
     </p>
   );

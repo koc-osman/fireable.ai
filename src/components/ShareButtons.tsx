@@ -36,7 +36,6 @@ export default function ShareButtons({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback for older browsers
       const el = document.createElement('textarea');
       el.value = window.location.href;
       document.body.appendChild(el);
@@ -54,7 +53,7 @@ export default function ShareButtons({
         href={xUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-black text-white text-xs font-semibold hover:bg-gray-800 transition-colors"
+        className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs font-semibold hover:bg-[#222222] transition-colors"
       >
         <XIcon />
         Share on X
@@ -72,7 +71,7 @@ export default function ShareButtons({
 
       <button
         onClick={handleCopy}
-        className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-gray-200 bg-white text-gray-700 text-xs font-semibold hover:bg-gray-50 transition-colors"
+        className="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-lg border border-[#2a2a2a] bg-[#1a1a1a] text-[#cccccc] text-xs font-semibold hover:bg-[#222222] transition-colors"
       >
         {copied ? (
           <>

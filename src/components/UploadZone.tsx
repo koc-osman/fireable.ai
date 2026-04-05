@@ -79,7 +79,6 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
     if (state.status !== 'selected') return;
     const file = state.file;
 
-    // Revoke the preview URL before unmounting it
     URL.revokeObjectURL(state.previewUrl);
     setState({ status: 'uploading' });
 
@@ -102,7 +101,7 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
     } catch {
       setState({
         status: 'error',
-        message: 'Please upload a LinkedIn profile screenshot (Experience section) or a CV. Random images cannot be autopsied.',
+        message: 'Please upload a LinkedIn profile screenshot (Experience section) or a CV.',
       });
     }
   }
@@ -121,13 +120,13 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
   if (state.status === 'error') {
     return (
       <div className="flex flex-col items-center gap-3 py-6 text-center">
-        <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#E24B4A]/30 flex items-center justify-center">
           <XCircleIcon className="w-5 h-5 text-[#E24B4A]" />
         </div>
         <p className="text-sm text-[#E24B4A] font-medium max-w-xs">{state.message}</p>
         <button
           onClick={reset}
-          className="text-xs text-gray-500 underline hover:text-gray-700 transition-colors"
+          className="text-xs text-[#666666] underline hover:text-[#888888] transition-colors"
         >
           Try again
         </button>
@@ -140,31 +139,31 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
     return (
       <div className="flex flex-col gap-3">
         {/* Preview row */}
-        <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-xl border border-[#2a2a2a]">
           {isImageType(state.file.type) ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={state.previewUrl}
               alt="Preview"
-              className="w-14 h-14 object-cover rounded-lg shrink-0 border border-gray-200"
+              className="w-14 h-14 object-cover rounded-lg shrink-0 border border-[#2a2a2a]"
             />
           ) : (
-            <div className="w-14 h-14 rounded-lg shrink-0 border border-gray-200 bg-white flex flex-col items-center justify-center gap-0.5">
-              <DocumentIcon className="w-6 h-6 text-gray-400" />
-              <span className="text-[9px] font-semibold uppercase text-gray-400 tracking-wide">
+            <div className="w-14 h-14 rounded-lg shrink-0 border border-[#2a2a2a] bg-[#0a0a0a] flex flex-col items-center justify-center gap-0.5">
+              <DocumentIcon className="w-6 h-6 text-[#555555]" />
+              <span className="text-[9px] font-semibold uppercase text-[#555555] tracking-wide">
                 {state.file.type.includes('pdf') ? 'PDF' : 'DOCX'}
               </span>
             </div>
           )}
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-medium text-gray-800 truncate">{state.file.name}</p>
-            <p className="text-xs text-gray-500 mt-0.5">
+            <p className="text-sm font-medium text-white truncate">{state.file.name}</p>
+            <p className="text-xs text-[#666666] mt-0.5">
               {(state.file.size / 1024).toFixed(0)} KB
             </p>
           </div>
           <button
             onClick={reset}
-            className="text-xs text-gray-400 hover:text-gray-600 underline shrink-0 transition-colors"
+            className="text-xs text-[#555555] hover:text-[#888888] underline shrink-0 transition-colors"
           >
             Change
           </button>
@@ -190,7 +189,6 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
   }
 
   // ── Empty / drop zone ────────────────────────────────────
-
   return (
     <div className="flex flex-col gap-3">
       <div
@@ -206,24 +204,24 @@ export default function UploadZone({ onSuccess }: UploadZoneProps) {
           'border-2 border-dashed rounded-xl cursor-pointer',
           'transition-colors select-none text-center',
           isDragging
-            ? 'border-[#E24B4A] bg-red-50'
-            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50',
+            ? 'border-[#E24B4A] bg-[#E24B4A]/5'
+            : 'border-[#2a2a2a] hover:border-[#444444] hover:bg-[#161616]',
         ].join(' ')}
       >
-        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-          <UploadIcon className="w-5 h-5 text-gray-400" />
+        <div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center">
+          <UploadIcon className="w-5 h-5 text-[#555555]" />
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-700">Upload your LinkedIn screenshot or CV</p>
-          <p className="text-xs text-gray-400 mt-1">LinkedIn Experience section · PDF CV · Word CV</p>
-          <p className="text-xs text-gray-300 mt-1.5">JPEG · PNG · WebP · PDF · DOCX · max 5 MB</p>
+          <p className="text-sm font-medium text-[#cccccc]">Upload your LinkedIn screenshot or CV</p>
+          <p className="text-xs text-[#555555] mt-1">LinkedIn Experience section · PDF CV · Word CV</p>
+          <p className="text-xs text-[#333333] mt-1.5">JPEG · PNG · WebP · PDF · DOCX · max 5 MB</p>
         </div>
       </div>
 
       {/* Disabled submit button */}
       <button
         disabled
-        className="w-full py-3 rounded-xl text-sm font-semibold tracking-wide bg-gray-100 text-gray-400 cursor-not-allowed"
+        className="w-full py-3 rounded-xl text-sm font-semibold tracking-wide bg-[#1a1a1a] text-[#444444] cursor-not-allowed border border-[#2a2a2a]"
       >
         Get my termination date
       </button>
