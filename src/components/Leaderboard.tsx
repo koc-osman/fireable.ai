@@ -31,7 +31,7 @@ export default function Leaderboard() {
     <div className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
       <div className="px-5 py-3 border-b border-gray-200">
         <h2 className="text-[10px] font-semibold tracking-[0.2em] uppercase text-gray-400">
-          Human Obsolescence Index
+          Most Fireable Jobs
         </h2>
       </div>
 
@@ -56,7 +56,7 @@ export default function Leaderboard() {
                 className="text-sm font-bold tabular-nums shrink-0"
                 style={{ color: scoreColor(entry.average_score) }}
               >
-                {entry.average_score}
+                {entry.average_score}%
               </span>
               <span className="text-xs text-gray-300 tabular-nums shrink-0 w-14 text-right">
                 {entry.total_autopsies.toLocaleString()} scanned
