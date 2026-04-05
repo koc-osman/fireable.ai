@@ -151,6 +151,7 @@ RULES FOR eulogy:
 RULES FOR afterlife.ghost_schedule:
 - Each activity must reference their specific old job/company/title.
 - Start with sad but normal (updating LinkedIn), end completely unhinged.
+- Use 24-hour time format (e.g. "09:00", "14:30", "21:00"). No AM/PM.
 
 OVERALL: Every field must reference specific profile data. If you swapped in a different name, it should NOT make sense.`;
 
