@@ -181,7 +181,7 @@ export default async function ReportPage({ params }: PageProps) {
           {/* ── 8. Employee Response ─────────────────────────────────── */}
           <div className="px-5 py-4 border-b border-[#2a2a2a]">
             <div className="text-[10px] font-semibold text-[#555555] uppercase tracking-widest mb-2">
-              Employee Response
+              Last Statement
             </div>
             <div className="bg-[#0a0a0a] rounded-xl p-4 border border-[#f5c518]/30">
               <p className="text-sm text-[#f5c518] italic uppercase leading-relaxed font-medium">
